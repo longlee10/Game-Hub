@@ -16,7 +16,7 @@ function App() {
         </GridItem>
       </Show>
 
-      <GridItem area={"main"} bg={"deeppink"}>
+      <GridItem area={"main"}>
         <GameGrid></GameGrid>
       </GridItem>
     </Grid>
