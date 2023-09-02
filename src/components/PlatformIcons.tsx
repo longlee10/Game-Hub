@@ -20,7 +20,7 @@ interface PlatformIconsProps {
 const PlatformIcons = ({ platforms }: PlatformIconsProps) => {
   const icons: { [key: string]: IconType } = {
     pc: FaWindows,
-    ps: FaPlaystation,
+    playstation: FaPlaystation,
     xbox: FaXbox,
     nintendo: SiNintendo,
     mac: FaApple,
