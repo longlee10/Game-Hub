@@ -11,6 +11,7 @@ import Sorting from "./components/Sorting";
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 function App() {
@@ -41,7 +42,10 @@ function App() {
               setGameQuery({ ...gameQuery, platform })
             }
           />
-          <Sorting />
+          <Sorting
+            onSorting={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}
+            sortOrder={gameQuery.sortOrder}
+          />
         </HStack>
 
         <GameGrid gameQuery={gameQuery} />
