@@ -7,6 +7,8 @@ import { Platform } from "./usePlatform";
 export interface Game {
   id: number;
   name: string;
+  slug: string;
+  description_raw: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
@@ -20,7 +22,7 @@ const useGames = () => {
   return useInfiniteQuery<DataResponse<Game>, Error>({
     queryKey: ["games", gameQuery],
     queryFn: ({ pageParam = 1 }) =>
-      apiClient.fetch({
+      apiClient.fetchAll({
         params: {
           genres: gameQuery.genreId,
           platforms: gameQuery.platformId,
